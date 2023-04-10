@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import A from './pages/A';
+
+export const MyContext = createContext()
+
+let info = {
+  name:"Saloni",
+  surname:"Modi"
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MyContext.Provider value={info}>
+      <A />
+    </MyContext.Provider>
+
   </React.StrictMode>
 );
 
